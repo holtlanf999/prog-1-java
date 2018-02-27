@@ -4,13 +4,6 @@
  * and open the template in the editor.
  */
 package classes;
-//sximport javax.swing.JOptionPane;
-
-import java.lang.reflect.Array;
-import java.util.Arrays;
-
-
-//import java.util.Arrays;
 
 /**
  *
@@ -28,20 +21,32 @@ public class functions {
         System.out.println(buffer + "\n");
     }
     
-    public void printPyramid(int limit){}
-    
-    public void printInvertedPyramid(int limit){
-        String buffer = "";
-        
+    public void printPyramid(int limit){
+//        StringBuilder buffer = new StringBuilder();
+        String buffer;
+        buffer = "*******";
+        System.out.println(buffer);
         
         for(int cont = 0; cont < limit; cont++){
-            buffer = buffer.concat("*");
-            if(buffer.length() == limit) {
-                System.out.println(buffer);
-                for(int cont2 = 0; cont2 > limit; limit--) {
-                    System.out.println("cont2: " + cont2 + "\n" + " limit:" + limit);
-                }
-            }
+           
+        }
+        
+        
+    }
+    
+    public void printInvertedPyramid(int limit){
+        StringBuilder buffer = new StringBuilder("");
+        for(int cont = 0; cont < limit; cont++){
+            buffer.append('*');
+        }
+
+        System.out.println(buffer);
+
+        for(int cont = 0; cont < limit; limit--) {
+            buffer.setCharAt(cont, ' ');
+            buffer.setCharAt(limit - 1, ' ');
+            cont++;
+            System.out.println(buffer);
         }
     }
     

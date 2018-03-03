@@ -4,12 +4,14 @@
  * and open the template in the editor.
  */
 package classes;
-
 /**
  *
  * @author Lanford
  */
 public class functions {
+    
+    menu menuList = new menu();
+    
     public void printInitial(int limit){
         String buffer;
         buffer = "*";
@@ -19,19 +21,28 @@ public class functions {
             buffer = buffer.concat("*");
         }
         System.out.println(buffer + "\n");
+        menuList.mainMenu();
     }
     
     public void printPyramid(int limit){
-//        StringBuilder buffer = new StringBuilder();
-        String buffer;
-        buffer = "*******";
-        System.out.println(buffer);
+        StringBuilder buffer;
+        buffer = new StringBuilder(""); 
+        buffer.setLength(limit);
+        int center;
+        center = limit/2;
         
         for(int cont = 0; cont < limit; cont++){
-           
+            buffer.setCharAt(cont, ' ');
         }
-        
-        
+        for(int cont = 0; cont < limit; cont++){
+            if(center + cont < limit && center - cont >= 0){
+                buffer.setCharAt(center - cont, '*');
+                buffer.setCharAt(center + cont, '*');
+                center = center--;
+                System.out.println(buffer);
+            }
+        }
+        menuList.mainMenu();
     }
     
     public void printInvertedPyramid(int limit){
@@ -39,15 +50,14 @@ public class functions {
         for(int cont = 0; cont < limit; cont++){
             buffer.append('*');
         }
-
         System.out.println(buffer);
-
         for(int cont = 0; cont < limit; limit--) {
             buffer.setCharAt(cont, ' ');
             buffer.setCharAt(limit - 1, ' ');
             cont++;
             System.out.println(buffer);
         }
+        menuList.mainMenu();
     }
     
     public void print90DegreePyramid(int limit){
@@ -57,6 +67,7 @@ public class functions {
             buffer = buffer.concat("*");
             System.out.println(buffer);
         }
+        menuList.mainMenu();
     }
     
     public void printInverted90DegreePyramid(int limit){
@@ -74,5 +85,6 @@ public class functions {
                 System.out.println(buffer);
             }
         }
+        menuList.mainMenu();
     }  
 }

@@ -6,8 +6,6 @@ package classes;
  * and open the template in the editor.
  */
 
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author Lanford
@@ -16,45 +14,8 @@ public class main {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
-        int option;
-        option = Integer.valueOf(JOptionPane.showInputDialog(
-            "Por favor ingrese una opción: \n"
-            + "1. Imprimir Inicial del nombre\n"
-            + "2. Imprimir pirámide\n"
-            + "3. Imprimir pirámide invertida\n"
-            + "4. Imprimir pirámide recta\n"
-            + "5. Imprimir pirámide recta invertida\n"
-        ));
-        int limit;
-        limit = Integer.valueOf(JOptionPane.showInputDialog(
-            "Ingrese el número para la cantidad de lineas (El mínimo es 3):"
-        ));
-        functions printer = new functions();
-        switch (option){
-            case 1 :{
-                printer.printInitial(limit);
-                break;
-            }
-            case 2 :{
-                printer.printPyramid(limit);
-                break;
-            }
-            case 3 :{
-                printer.printInvertedPyramid(limit);
-                break;
-            }
-            case 4 :{
-                printer.print90DegreePyramid(limit);
-                break;
-            }
-            case 5 :{
-                printer.printInverted90DegreePyramid(limit);
-                break;
-            }
-            default :{
-                JOptionPane.showMessageDialog(null, "Ingrese una opción válida");
-            }
-        }
+    public static void main(String[] args){
+        menu menuList = new menu();
+        menuList.mainMenu();
     }
 }
